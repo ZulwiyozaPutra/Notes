@@ -15,6 +15,7 @@
 		6EAB1D3A1EE28040009304D0 /* notesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EAB1D391EE28040009304D0 /* notesTests.swift */; };
 		6EAB1D451EE28040009304D0 /* notesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EAB1D441EE28040009304D0 /* notesUITests.swift */; };
 		6EAB1D541EE2818D009304D0 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6EAB1D521EE2818D009304D0 /* Model.xcdatamodeld */; };
+		6EAB1D561EE28DEB009304D0 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EAB1D551EE28DEB009304D0 /* MainTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		6EAB1D441EE28040009304D0 /* notesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = notesUITests.swift; sourceTree = "<group>"; };
 		6EAB1D461EE28040009304D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6EAB1D531EE2818D009304D0 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		6EAB1D551EE28DEB009304D0 /* MainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				6EAB1D241EE28040009304D0 /* AppDelegate.swift */,
+				6EAB1D551EE28DEB009304D0 /* MainTableViewController.swift */,
 				6EAB1D261EE28040009304D0 /* ViewController.swift */,
 				6EAB1D281EE28040009304D0 /* Main.storyboard */,
 				6EAB1D2B1EE28040009304D0 /* Assets.xcassets */,
@@ -265,6 +268,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EAB1D561EE28DEB009304D0 /* MainTableViewController.swift in Sources */,
 				6EAB1D271EE28040009304D0 /* ViewController.swift in Sources */,
 				6EAB1D251EE28040009304D0 /* AppDelegate.swift in Sources */,
 				6EAB1D541EE2818D009304D0 /* Model.xcdatamodeld in Sources */,
