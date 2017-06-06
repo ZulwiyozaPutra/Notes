@@ -29,6 +29,11 @@ class MainTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        title = "CoolNotes"
+        
+        let delegate = UIApplication.shared.delegate as! AppDelegate
+        let stack = delegate.stack
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -59,7 +64,15 @@ extension MainTableViewController {
     // MARK: - Subclass responsibility
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        fatalError("This method must be implemented by a subclass of CoreDataTableViewController")
+        
+        let noteBook = fetchedResultsController!.object(at: indexPath) as! NoteBook
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Notebook's Cell", for: indexPath)
+        
+        cell.textLabel?.text = noteBook.name
+        cell.detailTextLabel?.text = "\(String(describing: noteBook.notes?.count)) notes"
+        
+        return cell
     }
 }
 
