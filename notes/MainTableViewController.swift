@@ -33,7 +33,7 @@ class MainTableViewController: UITableViewController {
         title = "CoolNotes"
         
         let delegate = UIApplication.shared.delegate as! AppDelegate
-        let stack = delegate.stack
+        let stack = delegate.self
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
