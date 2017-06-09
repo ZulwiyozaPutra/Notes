@@ -26,6 +26,10 @@ class MainTableViewController: UITableViewController {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+//    required init?(coder aDecoder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +37,12 @@ class MainTableViewController: UITableViewController {
         title = "CoolNotes"
         
         let delegate = UIApplication.shared.delegate as! AppDelegate
-        let stack = delegate.self
+        let stack = delegate.stack
+        
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Notebook")
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true), NSSortDescriptor(key: "date", ascending: false)]
+        
+        fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: stack.context, sectionNameKeyPath: nil, cacheName: nil)
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -57,6 +66,21 @@ class MainTableViewController: UITableViewController {
     }
     */
 
+}
+
+// MARK: - CoreDataTableViewController (Fetches)
+
+extension MainTableViewController {
+    
+    func executeSearch() {
+        if let fc = fetchedResultsController {
+            do {
+                try fc.performFetch()
+            } catch let e as NSError {
+                print("Error while trying to perform a search: \n\(e)\n\(String(describing: fetchedResultsController))")
+            }
+        }
+    }
 }
 
 extension MainTableViewController {

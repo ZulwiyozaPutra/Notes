@@ -3,15 +3,15 @@
     <entity name="Note" representedClassName=".Note" syncable="YES" codeGenerationType="class">
         <attribute name="content" attributeType="String" syncable="YES"/>
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" indexed="YES" syncable="YES"/>
-        <relationship name="notebook" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="NoteBook" inverseName="notes" inverseEntity="NoteBook" syncable="YES"/>
+        <relationship name="notebook" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Notebook" inverseName="notes" inverseEntity="Notebook" syncable="YES"/>
     </entity>
-    <entity name="NoteBook" representedClassName=".NoteBook" syncable="YES" codeGenerationType="class">
+    <entity name="Notebook" representedClassName=".NoteBook" syncable="YES" codeGenerationType="class">
         <attribute name="date" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
         <relationship name="notes" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Note" inverseName="notebook" inverseEntity="Note" syncable="YES"/>
     </entity>
     <elements>
         <element name="Note" positionX="-63" positionY="-18" width="128" height="88"/>
-        <element name="NoteBook" positionX="232" positionY="-18" width="128" height="88"/>
+        <element name="Notebook" positionX="232" positionY="-18" width="128" height="90"/>
     </elements>
 </model>
