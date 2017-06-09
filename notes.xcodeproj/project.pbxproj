@@ -17,6 +17,10 @@
 		6EAB1D451EE28040009304D0 /* notesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EAB1D441EE28040009304D0 /* notesUITests.swift */; };
 		6EAB1D541EE2818D009304D0 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6EAB1D521EE2818D009304D0 /* Model.xcdatamodeld */; };
 		6EAB1D561EE28DEB009304D0 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EAB1D551EE28DEB009304D0 /* MainTableViewController.swift */; };
+		6ED91F4B1EEA7F710096074D /* Note+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED91F471EEA7F710096074D /* Note+CoreDataClass.swift */; };
+		6ED91F4C1EEA7F710096074D /* Note+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED91F481EEA7F710096074D /* Note+CoreDataProperties.swift */; };
+		6ED91F4D1EEA7F710096074D /* Notebook+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED91F491EEA7F710096074D /* Notebook+CoreDataClass.swift */; };
+		6ED91F4E1EEA7F710096074D /* Notebook+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED91F4A1EEA7F710096074D /* Notebook+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +57,10 @@
 		6EAB1D461EE28040009304D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6EAB1D531EE2818D009304D0 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		6EAB1D551EE28DEB009304D0 /* MainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
+		6ED91F471EEA7F710096074D /* Note+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Note+CoreDataClass.swift"; sourceTree = "<group>"; };
+		6ED91F481EEA7F710096074D /* Note+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Note+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		6ED91F491EEA7F710096074D /* Notebook+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Notebook+CoreDataClass.swift"; sourceTree = "<group>"; };
+		6ED91F4A1EEA7F710096074D /* Notebook+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Notebook+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +93,10 @@
 			children = (
 				6EAB1D521EE2818D009304D0 /* Model.xcdatamodeld */,
 				6E233E961EEA35CB0095A859 /* CoreDataStack.swift */,
+				6ED91F471EEA7F710096074D /* Note+CoreDataClass.swift */,
+				6ED91F481EEA7F710096074D /* Note+CoreDataProperties.swift */,
+				6ED91F491EEA7F710096074D /* Notebook+CoreDataClass.swift */,
+				6ED91F4A1EEA7F710096074D /* Notebook+CoreDataProperties.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -280,10 +292,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E233E971EEA35CB0095A859 /* CoreDataStack.swift in Sources */,
+				6ED91F4C1EEA7F710096074D /* Note+CoreDataProperties.swift in Sources */,
 				6EAB1D561EE28DEB009304D0 /* MainTableViewController.swift in Sources */,
 				6EAB1D271EE28040009304D0 /* ViewController.swift in Sources */,
+				6ED91F4D1EEA7F710096074D /* Notebook+CoreDataClass.swift in Sources */,
+				6ED91F4B1EEA7F710096074D /* Note+CoreDataClass.swift in Sources */,
 				6EAB1D251EE28040009304D0 /* AppDelegate.swift in Sources */,
 				6EAB1D541EE2818D009304D0 /* Model.xcdatamodeld in Sources */,
+				6ED91F4E1EEA7F710096074D /* Notebook+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

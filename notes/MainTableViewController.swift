@@ -92,7 +92,6 @@ extension MainTableViewController {
         let noteBook = fetchedResultsController!.object(at: indexPath) as! 
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Notebook's Cell", for: indexPath) as UITableViewCell
-        
         cell.textLabel?.text = noteBook.name
         cell.detailTextLabel?.text = "\(String(describing: noteBook.notes?.count)) notes"
         
