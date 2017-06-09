@@ -1,5 +1,5 @@
 //
-//  NotebookTableViewController.swift
+//  NotebooksTableViewController.swift
 //  notes
 //
 //  Created by Zulwiyoza Putra on 6/9/17.
@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import CoreData
 
-class NotebookTableViewController: MainTableViewController {
+class NotebooksTableViewController: MainTableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +38,7 @@ class NotebookTableViewController: MainTableViewController {
     
 }
 
-extension NotebookTableViewController {
+extension NotebooksTableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let notebook = fetchedResultsController!.object(at: indexPath) as! Notebook
@@ -47,4 +47,29 @@ extension NotebookTableViewController {
         cell.detailTextLabel?.text = "\(notebook.notes!.count) notes"
         return cell
     }
+}
+
+extension NotebooksTableViewController {
+    
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "Displaying Note" {
+            if let notesTableViewController = segue.destination as? NotesTableViewController {
+                let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Note")
+                fetchRequest.sortDescriptors = [NSSortDescriptor(key: "date", ascending: false), NSSortDescriptor(key: "text", ascending: true)]
+                let indexPath = tableView.indexPathForSelectedRow!
+                let notebook = self.fetchedResultsController?.object(at: indexPath)
+                let predicate = NSPredicate(format: "notebook = %@", argumentArray: [notebook!])
+                fetchRequest.predicate = predicate
+                let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: self.fetchedResultsController!.managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
+                notesTableViewController.fetchedResultsController = fetchedResultsController
+            }
+        }
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+    
+
 }
