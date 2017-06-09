@@ -12,11 +12,16 @@ import CoreData
 
 class NotebooksTableViewController: MainTableViewController {
     
+    @IBAction func addNotebook(_ sender: Any) {
+        let notebook = Notebook(name: "New Notebook", context: fetchedResultsController!.managedObjectContext)
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Set the title
-        title = "Notes"
+        title = "Notebook"
         
         // Get the stack from AppDelegate
         let delegate = UIApplication.shared.delegate as! AppDelegate

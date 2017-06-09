@@ -9,9 +9,17 @@
 import UIKit
 
 class NotesTableViewController: MainTableViewController {
-
+    
+    @IBAction func addNote(_ sender: Any) {
+        
+        let note = Note(text: "New Note", context: fetchedResultsController!.managedObjectContext)
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        title = "Notes"
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -80,3 +88,5 @@ class NotesTableViewController: MainTableViewController {
     */
 
 }
+
+

@@ -51,16 +51,22 @@
                             <outlet property="delegate" destination="fBG-k6-oO6" id="yuk-or-x3c"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="9hi-nX-WmO"/>
+                    <navigationItem key="navigationItem" id="9hi-nX-WmO">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Snt-cM-r5f">
+                            <connections>
+                                <action selector="addNotebook:" destination="fBG-k6-oO6" id="csf-HS-fe3"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HH2-3G-xEp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1044" y="641.82908545727139"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Notes Table View Controller-->
         <scene sceneID="rWc-jF-dsz">
             <objects>
-                <tableViewController id="qm5-RO-GJk" sceneMemberID="viewController">
+                <tableViewController id="qm5-RO-GJk" customClass="NotesTableViewController" customModule="notes" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ALI-p3-hSb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -96,6 +102,13 @@
                             <outlet property="delegate" destination="qm5-RO-GJk" id="vgh-P1-rcn"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="Myh-KE-A07">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="flz-lb-Ehr">
+                            <connections>
+                                <action selector="addNote:" destination="qm5-RO-GJk" id="fIg-qc-gPc"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LNl-Lw-j1d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
