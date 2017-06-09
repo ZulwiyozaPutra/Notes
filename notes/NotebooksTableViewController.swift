@@ -16,7 +16,6 @@ class NotebooksTableViewController: MainTableViewController {
         let notebook = Notebook(name: "New Notebook", context: fetchedResultsController!.managedObjectContext)
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,12 +32,6 @@ class NotebooksTableViewController: MainTableViewController {
         
         // Create a fetch request controller
         fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: stack.context, sectionNameKeyPath: nil, cacheName: nil)
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     
 }
@@ -54,11 +47,10 @@ extension NotebooksTableViewController {
     }
 }
 
+// MARK: - Navigation
+
 extension NotebooksTableViewController {
     
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "Displaying Note" {
             if let notesTableViewController = segue.destination as? NotesTableViewController {
@@ -72,8 +64,6 @@ extension NotebooksTableViewController {
                 notesTableViewController.fetchedResultsController = fetchedResultsController
             }
         }
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
      }
     
 
