@@ -11,12 +11,16 @@ import CoreData
 
 class MainTableViewController: UITableViewController {
     
+    // MARK: Properties
+    
     var fetchedResultsController: NSFetchedResultsController<NSFetchRequestResult>? {
         didSet {
             fetchedResultsController?.delegate = self as? NSFetchedResultsControllerDelegate
             tableView.reloadData()
         }
     }
+    
+    // MARK: Initializers
     
     init(fetchedResultsController controller : NSFetchedResultsController<NSFetchRequestResult>, style : UITableViewStyle = .plain) {
         fetchedResultsController = controller
@@ -26,10 +30,6 @@ class MainTableViewController: UITableViewController {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-//    required init?(coder aDecoder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -89,7 +89,7 @@ extension MainTableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let noteBook = fetchedResultsController!.object(at: indexPath) as! NoteBook
+        let noteBook = fetchedResultsController!.object(at: indexPath) as! 
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Notebook's Cell", for: indexPath)
         
