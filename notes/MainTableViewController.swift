@@ -15,7 +15,10 @@ class MainTableViewController: UITableViewController {
     
     var fetchedResultsController: NSFetchedResultsController<NSFetchRequestResult>? {
         didSet {
+            // Whenever the fetch result controller changes, we execute the search and
+            // reload the table
             fetchedResultsController?.delegate = self as? NSFetchedResultsControllerDelegate
+            executeSearch()
             tableView.reloadData()
         }
     }
@@ -28,27 +31,7 @@ class MainTableViewController: UITableViewController {
     }
     
     required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        title = "CoolNotes"
-        
-        let delegate = UIApplication.shared.delegate as! AppDelegate
-        let stack = delegate.stack
-        
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Notebook")
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true), NSSortDescriptor(key: "date", ascending: false)]
-        
-        fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: stack.context, sectionNameKeyPath: nil, cacheName: nil)
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        super.init(coder: aDecoder)
     }
 
     override func didReceiveMemoryWarning() {
@@ -88,14 +71,7 @@ extension MainTableViewController {
     // MARK: - Subclass responsibility
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let noteBook = fetchedResultsController!.object(at: indexPath) as! 
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Notebook's Cell", for: indexPath) as UITableViewCell
-        cell.textLabel?.text = noteBook.name
-        cell.detailTextLabel?.text = "\(String(describing: noteBook.notes?.count)) notes"
-        
-        return cell
+        fatalError("This method MUST be implemented by a subclass of CoreDataTableViewController")
     }
 }
 
@@ -125,6 +101,22 @@ extension MainTableViewController {
         
         if let controller = fetchedResultsController {
             return controller.sections![section].name
+        } else {
+            return nil
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
+        if let controller = fetchedResultsController {
+            return controller.section(forSectionIndexTitle: title, at: index)
+        } else {
+            return 0
+        }
+    }
+    
+    override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+        if let controller = fetchedResultsController {
+            return controller.sectionIndexTitles
         } else {
             return nil
         }
